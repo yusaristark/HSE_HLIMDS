@@ -73,15 +73,15 @@ while True:
             heightFactor = frame.shape[0]/300.0  
             widthFactor = frame.shape[1]/300.0 
             # Scale object detection to frame
-            xLeftBottom = int(widthFactor * xLeftBottom) 
+            xLeftBottom = int(wiv2.rectangle(frame, (xLeftBottom, yLeftBottom), (xRightTop, yRightTop),
+                          (0, 255, 0))
+
+            # Draw label and confidence of prediction in frame resizeddthFactor * xLeftBottom) 
             yLeftBottom = int(heightFactor * yLeftBottom)
             xRightTop   = int(widthFactor * xRightTop)
             yRightTop   = int(heightFactor * yRightTop)
             # Draw location of object  
-            cv2.rectangle(frame, (xLeftBottom, yLeftBottom), (xRightTop, yRightTop),
-                          (0, 255, 0))
-
-            # Draw label and confidence of prediction in frame resized
+            c
             if class_id in classNames:
                 label = classNames[class_id] + ": " + str(confidence)
                 labelSize, baseLine = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.5, 1)

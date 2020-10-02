@@ -1,22 +1,13 @@
-# MobilNet_SSD_opencv
-MobilNet-SSD object detection in opencv 3.4.1 and python 3 or 2
+# MobileNet_SSD_opencv
+MobileNet-SSD object detection in opencv 3.4.1 and python 3 or 2
 
-Read tutorial here:
-http://ebenezertechs.com/mobilenet-ssd-using-opencv-3-4-1-deep-learning-module-python/
+Назначение параметров:
+--video:    Path to video file. If empty, camera's stream will be used
+--prototxt: Path to text network file: MobileNetSSD_deploy.prototxt for Caffe model (default="MobileNetSSD_deploy.prototxt")
+--weights:  Path to weights: MobileNetSSD_deploy.caffemodel for Caffe model (default="MobileNetSSD_deploy.caffemodel")
+--thr:      confidence threshold to filter out weak detections (default=0.2, type=float)
 
-Mobilenet_ssd_python.py: 
-Example take video file or videocamera as input. 
+Программа изначально работает с файлами, установленными по умолчанию, они должны находиться в одной директории с программой, для использования своих используйте параметры.
 
-sample_img.py: 
-Take a image as input. If don't load an image by default load img.jpeg 
-
-## Run scripts
-```sh
-$ python3 mobilenet_ssd_python.py --[params] 
-```
-If no load params take video input value by default 
-
-```sh
-$ python3 sample_img.py --[params] 
-```
-If no load params take Image by default 
+Программа производит поиск объектов на видеопотоке или в видеофайле, обводит найденные объекты в рамку, выводит название и вероятность определения, также дуюлирует эти данные в консоль.
+К каждому фрагменту кода в файле mobilenet_ssd_python.py есть комментарии, поясняющие те или иные решения в программном коде. 
